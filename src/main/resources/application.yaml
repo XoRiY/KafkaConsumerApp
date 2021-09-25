@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: "kafka-producer-api"
+    description: @project.description@
+    version: @project.version@
+  jackson:
+    time-zone: Europe/Paris
+    locale: FR
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+server:
+  port: 9000
+  servlet:
+    context-path: /kafka-producer-api
+
+topic-name: "java_in_use_topic"
